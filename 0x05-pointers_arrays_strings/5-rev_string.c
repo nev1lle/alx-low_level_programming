@@ -8,11 +8,11 @@ void rev_string(char *s)
 {
 	int lengthcount, i;
 	char chtemp; /* holds the value temporarily to prevent overwriting */
-	
+
 	lengthcount = 0;
 	while (s[lengthcount])
 		lengthcount++;
-	
+
 	for (i = 0; i < (lengthcount / 2); i++) /**
 					       * loop runs till half of string for
 					       * swapping
