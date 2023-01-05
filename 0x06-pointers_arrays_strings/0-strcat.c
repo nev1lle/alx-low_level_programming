@@ -4,19 +4,20 @@
  * *_strcat - appends the src string to the dest string, overwriting the
  * terminating null byte (\0) at the end of dest, and then adds a terminating
  * null byte
- * @*dest: pointer to the dest string to be concatenated upon
- * @*src: pointer to the src string to be appended to @dest
+ * @dest: pointer to the dest string to be concatenated upon
+ * @src: pointer to the src string to be appended to @dest
  * Return: a pointer to the resulting string dest(*dest)
  */
 char *_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
-		dest++;
+	int i = 0;
+	int dest_length = 0;
 
-	while (*src != '\0')
-		*dest++ = *src++;
+	while (dest[i++])
+		dest_length++;
 
-	*dest = '\0';
-	
-	return(dest);
+	for (i = 0; src[i]; i++)
+		dest[dest_length++] = src[i];
+
+	return (dest);
 }
