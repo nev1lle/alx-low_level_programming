@@ -13,15 +13,14 @@ char *leet(char *str)
 	char number[] = "43071";
 
 	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (j = 0; j < 10; j++)
 		{
-			for (j = 0; j < 10; j++)
-			{
-				if (str[i] == letter[j] || str[i] - 32 ==
-						letter[j])
-					str[i] = number[j / 2];
-			}
+			if (str[i] == letter[j] || str[i] - 32 ==
+					letter[j])
+				str[i] = number[j / 2];
 		}
+	}
 
 	return (str);
 }
-				
