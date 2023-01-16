@@ -7,18 +7,17 @@
  */
 char *rot13(char *str)
 {
-	int i = 0;
+	int i, j;
+	char 1st[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char 2nd[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <=
-				'M'))
-			str[i] += 13;
-
-		else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' &&
-				str[i] <= 'Z'))
-			str[i] -= 13;
-		i++;
+		for (j = 0; j < 52; j++)
+		{
+			if (str[i] == 1st[j])
+				str[i] = 2nd[j];
+		}
 	}
 
 	return (str);
