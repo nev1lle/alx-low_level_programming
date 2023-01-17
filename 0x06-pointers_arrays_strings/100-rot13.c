@@ -9,15 +9,18 @@ char *rot13(char *str)
 {
 	int i, j;
 
-	char 1st[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char 2nd[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char first[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char second[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 52; j++)
+		for (j = 0; first[j] != '\0'; j++)
 		{
-			if (str[i] == 1st[j])
-				str[i] = 2nd[j];
+			if (str[i] == first[j])
+			{
+				str[i] = second[j];
+				break;
+			}
 		}
 	}
 
