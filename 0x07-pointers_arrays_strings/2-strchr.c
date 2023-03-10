@@ -11,7 +11,14 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] >= '\0'; i++)
+	for (i = 0; s[i] >= '\0'; i++) /* checks if the character at index i in
+					* the string s is greater than or equal
+					* to the null character '\0'.
+					* Any character with a value greater than
+					* or equal to zero is considered a valid
+					* character in a C string.
+					*/
+
 	{
 		if (s[i] == c)
 			return (&s[i]);
