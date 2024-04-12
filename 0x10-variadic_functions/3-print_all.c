@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
 
 /**
@@ -10,11 +8,8 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char *string, *sep = ""; /**
-				  * 'sep' enhances the formatting output &
-				  * is initialized to an appropriate default
-				  * value to ensure predictable behavior
-				  */
+	char *string, *sep = "";
+
 	va_list types;
 
 	va_start(types, format);
@@ -36,10 +31,8 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					string = va_arg(types, char *);
-
 					if (!string)
 						string = "(nil)";
-
 					printf("%s%s", sep, string);
 					break;
 				default:
@@ -47,7 +40,6 @@ void print_all(const char * const format, ...)
 					continue;
 
 			}
-
 			sep = ", ";
 			i++;
 		}
