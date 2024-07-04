@@ -1,8 +1,11 @@
 This is a project on linked lists that aims to meet the following learning objectives:
+
 	1. When and why using linked lists vs arrays
+
 	2. How to build and use linked lists
 
 The following files are created to solve this project's tasks:
+
 	1. 0-print_list.c - prints all the elements of a list_t list.
 
 	2. 1-list_len.c - returns the number of elements in a linked list_t list.returns the number of elements in a linked list_t list.
